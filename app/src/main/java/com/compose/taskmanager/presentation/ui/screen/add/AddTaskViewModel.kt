@@ -98,7 +98,7 @@ class AddTaskViewModel @Inject constructor(private val validateTaskUseCase: Vali
      * @see getErrorMessage
      * @see TaskFormState
      */
-    private fun submitData() {
+    fun submitData() {
         val validationState = validateTaskUseCase.execute(
             _taskFormState.value.title,
             _taskFormState.value.description,

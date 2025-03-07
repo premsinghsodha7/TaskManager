@@ -16,7 +16,7 @@ import java.time.LocalDate
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class TaskRepositoryTest {
     @Mock
     private lateinit var mockTaskRepository: TaskRepository
 

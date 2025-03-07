@@ -37,7 +37,7 @@ class DetailsViewModel @Inject constructor(
         }
     }
 
-    private fun getTaskById(id: Int){
+    fun getTaskById(id: Int){
         viewModelScope.launch {
             _taskDetails.value = repository.getTaskById(id)
         }
