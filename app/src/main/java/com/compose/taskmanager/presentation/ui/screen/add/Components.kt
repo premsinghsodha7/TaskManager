@@ -70,7 +70,6 @@ import compose.icons.feathericons.MinusCircle
 import compose.icons.feathericons.PlusCircle
 import es.dmoral.toasty.Toasty
 import java.time.format.DateTimeFormatter
-import kotlinx.parcelize.Parcelize
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -322,7 +321,6 @@ fun DateTimePickerSection(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .weight(1f)
         ) {
             Text(
                 text = "Due date",
@@ -339,7 +337,10 @@ fun DateTimePickerSection(
                 .background(Grey, RoundedCornerShape(12.dp))
                 .padding(3.dp)
                 .fillMaxWidth()
-                .height(48.dp),
+                .height(48.dp)
+                .clickable {
+                    calendarState.show()
+                },
                 contentAlignment = Alignment.CenterStart
             ) {
                 Row(
@@ -366,62 +367,6 @@ fun DateTimePickerSection(
                         modifier = Modifier
                             .size(20.dp)
                             .alpha(0.8f)
-                            .clickable {
-                                calendarState.show()
-                            }
-                    )
-                }
-            }
-        }
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .weight(1f)
-        ) {
-            Text(
-                text = "Estimate task",
-                fontSize = 14.sp,
-                color =  White,
-                fontFamily = priegoFont,
-                fontWeight = FontWeight.Normal,
-                modifier = Modifier
-                    .alpha(0.7f)
-                    .padding(bottom = 9.dp)
-            )
-
-            Box(modifier = Modifier
-                .background(Grey, RoundedCornerShape(12.dp))
-                .padding(3.dp)
-                .fillMaxWidth()
-                .height(48.dp),
-                contentAlignment = Alignment.CenterStart
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = state.estimateTask.toString() + "h",
-                        color = White,
-                        fontFamily = priegoFont,
-                        fontWeight = FontWeight.Medium,
-                        fontSize = 15.sp
-                    )
-
-                    Icon(
-                        imageVector = FeatherIcons.Clock,
-                        contentDescription = null,
-                        tint = White,
-                        modifier = Modifier
-                            .size(19.dp)
-                            .alpha(0.8f)
-                            .clickable {
-                                timeState.show()
-                            }
                     )
                 }
             }

@@ -76,21 +76,15 @@ fun BottomBar(
 
     var bottomBarState by rememberSaveable { (mutableStateOf(true)) }
 
-    when (currentRouteTrimmed) {
+    bottomBarState = when (currentRouteTrimmed) {
         BottomNavScreens.Home.route.toString() -> {
-            bottomBarState = true
+            true
         }
-        /*BottomNavScreens.Message.route.toString() -> {
-            bottomBarState = true
-        }
-        BottomNavScreens.Profile.route.toString() -> {
-            bottomBarState = true
-        }*/
         BottomNavScreens.Tasks.route.toString() -> {
-            bottomBarState = true
+            true
         }
         else -> {
-            bottomBarState = false
+            false
         }
     }
 
