@@ -1,10 +1,20 @@
-package com.compose.taskmanager.ui.theme
+package com.compose.taskmanager.presentation.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.compose.taskmanager.R
+
+val priegoFont = FontFamily(
+    Font(R.font.priego_light, FontWeight.Light),
+    Font(R.font.priego_regular, FontWeight.Normal),
+    Font(R.font.priego_medium, FontWeight.Medium),
+    Font(R.font.priego_semibold, FontWeight.SemiBold),
+    Font(R.font.priego_bold, FontWeight.Bold)
+)
 
 // Set of Material typography styles to start with
 val Typography = Typography(
